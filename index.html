@@ -82,7 +82,7 @@
 
             speak("69 ".repeat(16))
             
-            setInterval(() => {
+            setInterval(function(){
                 let s = ''
                 // 10 is the number of moons
                 for (let i = 0; i < 50; i++) {
@@ -112,7 +112,7 @@
                 popup.document.write("<h1>I'm Bouncing!</h1>");
 
                 // 2. Start the animation loop
-                setTimeout(function(){setInterval(() => {
+                setTimeout(function(){setInterval(function(){
                     // Get current position and screen constraints
                     const x = popup.screenX;
                     const y = popup.screenY;
