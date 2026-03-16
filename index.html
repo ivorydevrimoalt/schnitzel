@@ -134,6 +134,28 @@
                     popup.moveBy(vx, vy);
                 }, 30)},1100);
             }
+            // Randomizing position variant
+            function spawnRandom(eee) {
+                var maxX = screen.availWidth - scale;
+                var maxY = screen.availHeight - scale;
+                var popup = window.open(eee+'.html', '_blank', 'width=400,height=300');
+                if (!popup) {
+                    alert("Popup blocked! Please allow popups for this site.");
+                    return;
+                }
+
+                setTimeout(function(){setInterval(function() {
+                    var x = popup.screenX;
+                    var y = popup.screenY;
+                    var width = popup.outerWidth;
+                    var height = popup.outerHeight;
+
+                    var screenWidth = window.screen.availWidth;
+                    var screenHeight = window.screen.availHeight;
+
+                    popup.moveTo(Math.floor(Math.random() * screen.width), Math.floor(Math.random() * screen.height));
+                }, 30)},1100);
+            }
 
             // Spawning and bouncing multiple popups
             spawnAndBounce("lol3");
@@ -141,6 +163,11 @@
             spawnAndBounce("lol4");
             spawnAndBounce("lol1");
             spawnAndBounce("popup");
+            spawnRandom("lol3");
+            spawnRandom("lol2");
+            spawnRandom("lol4");
+            spawnRandom("lol1");
+            spawnRandom("popup");
         }
 
         document.addEventListener('click', function() {
