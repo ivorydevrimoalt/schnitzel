@@ -39,12 +39,21 @@
             window.open('lol2.html', '_blank');
             window.open('lol3.html', '_blank');
             window.open('lol4.html', '_blank');
+            window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', '_blank');
+            function randomRange(min, max) {
+	            return Math.floor(Math.random() * (max - min) + min);
+            }
+
+            function setWindow() {			
+	            window.moveTo(randomRange(0, screen.width), randomRange(0, screen.height));
+            }
             setInterval(function(){
                 const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
                 document.getElementById('seized').src = randomGif;
             }, 200);
             setInterval(function(){
                 document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+                setWindow()
             }, 25);
             var win = 'win_';
             for (var i = 0; i < 8; i++) {
