@@ -102,7 +102,7 @@
 
             function spawnAndBounce() {
                 // 1. Open the popup (Width: 400, Height: 300)
-                popup = window.open('lol3.html', 'Bouncer', 'width=400,height=300');
+                popup = window.open('lol3.html', '_blank' 'width=400,height=300');
     
                 if (!popup) {
                     alert("Popup blocked! Please allow popups for this site.");
@@ -130,16 +130,6 @@
                     popup.moveBy(vx, vy);
                 }, 30)},1100);
             }
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
-            spawnAndBounce()
             spawnAndBounce()
         }
         document.addEventListener('click', function(){
