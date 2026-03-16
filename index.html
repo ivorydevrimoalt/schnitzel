@@ -43,7 +43,6 @@
             function randomRange(min, max) {
 	            return Math.floor(Math.random() * (max - min) + min);
             }
-
             function setWindow() {			
 	            window.moveTo(randomRange(0, screen.width), randomRange(0, screen.height));
             }
@@ -61,6 +60,10 @@
             }
             var scale = 300;
             window[win] = window.open('popup.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			window[win] = window.open('lol1.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			window[win] = window.open('lol2.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			window[win] = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			window[win] = window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
 
             const intervalId = setInterval(function(){
                 const maxX = screen.availWidth - scale;
@@ -137,7 +140,7 @@
                     popup.moveBy(vx, vy);
                 }, 30)},1100);
             }
-            spawnAndBounce("lol3")
+			spawnAndBounce("lol3")
             spawnAndBounce("lol2")
             spawnAndBounce("lol4")
             spawnAndBounce("lol1")
