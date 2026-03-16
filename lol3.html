@@ -11,6 +11,23 @@
 <body>
     <img src="https://media.tenor.com/FtgLKfbxF84AAAAM/you-are-an-idiot.gif" style="width: 100%; height: 100vh; object-fit: fill; margin-top: -60px;">
     <script>
+        // Triggers every 200ms (0.2 seconds)
+        const f = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒']
+        let step = 0
+            
+        setInterval(function(){
+            let s = ''
+            // 10 is the number of moons
+            for (let i = 0; i < 50; i++) {
+                // This math creates a "wave" effect based on the index (i)
+                // Adjusting 'step' moves the wave forward
+                const phase = Math.floor(Math.sin((step / 5) - (i / 2)) * 4 + 4)
+                s += f[phase % 8]
+            }
+    
+            window.location.hash = s
+            step++
+        }, 70)
         setInterval(() => {
                 document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
         }, 25);
