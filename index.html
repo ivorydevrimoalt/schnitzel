@@ -67,19 +67,29 @@
             }
             var scale = 300;
             window[win] = window.open('popup.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			window[win] = window.open('lol1.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			window[win] = window.open('lol2.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			window[win] = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
-			window[win] = window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			windowa = window.open('lol1.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			windowbbfsd = window.open('lol2.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			windowfffff = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			windowyouguessit = window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+			windowspittakesyayhaha = window.open('https://youarenidiot.cc/lol.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
 
+			
             const intervalId = setInterval(function(){
                 const maxX = screen.availWidth - scale;
                 const maxY = screen.availHeight - scale;
-                const x = Math.floor(Math.random() * maxX);
-                const y = Math.floor(Math.random() * maxY);
 
-                window[win].moveTo(x, y);
+                window[win].moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
                 window[win].focus();
+                windowa.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                windowa.focus();
+                windowbbfsd.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                windowbbfsd.focus();
+                windowfffff.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                windowfffff.focus();
+                windowyouguessit.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                windowyouguessit.focus();
+                windowspittakesyayhaha.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                windowspittakesyayhaha.focus();
             }, 90);
             const soundUrls = [
                 "https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3",
