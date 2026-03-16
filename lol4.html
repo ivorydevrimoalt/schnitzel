@@ -1,0 +1,28 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media.tenor.com/FtgLKfbxF84AAAAM/you-are-an-idiot.gif" style="width: 100%; height: 100vh; object-fit: fill; margin-top: -60px;">
+    <script>
+        setInterval(() => {
+                document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+        }, 25);
+        var scale = 300;
+        const hi = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+        setInterval(function(){
+            const maxX = screen.availWidth - scale;
+            const maxY = screen.availHeight - scale;
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+            hi.moveTo(x,y);
+        }, 100);
+    </script>
+</body>
+</html>

