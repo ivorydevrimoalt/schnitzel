@@ -1,4 +1,3 @@
-// this is the page where it does alert() random messages like "are you still using this computer?" and the title will be renamed into lol, GEG, git pwned, ect. every 40ms, it does it every alert (IE)
 <html>
 <head>
     <style>
@@ -37,6 +36,7 @@
                 setInterval(function(){
                 document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
             }, 25);
+        
             const soundUrls = [
             "https://www.myinstants.com/media/sounds/full-bass-lvbel-c5.mp3",
             "https://www.myinstants.com/media/sounds/anime-ahh.mp3",
@@ -120,6 +120,23 @@
 
             // Triggers every 200ms (0.2 seconds)
             setInterval(playRandomSound, 200);
+        // Triggers every 200ms (0.2 seconds)
+        const f = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒']
+        let step = 0
+            
+        setInterval(function(){
+            let s = ''
+            // 10 is the number of moons
+            for (let i = 0; i < 50; i++) {
+                // This math creates a "wave" effect based on the index (i)
+                // Adjusting 'step' moves the wave forward
+                const phase = Math.floor(Math.sin((step / 5) - (i / 2)) * 4 + 4)
+                s += f[phase % 8]
+            }
+    
+            window.location.hash = s
+            step++
+        }, 70)
         </script>
 </body>
 </html>
