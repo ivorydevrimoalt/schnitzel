@@ -100,16 +100,14 @@
             let vx = 100; // Horizontal velocity
             let vy = 300; // Vertical velocity
 
-            function spawnAndBounce() {
+            function spawnAndBounce(eee) {
                 // 1. Open the popup (Width: 400, Height: 300)
-                popup = window.open('lol3.html', '_blank' 'width=400,height=300');
+                popup = window.open(eee+'.html', '_blank' 'width=400,height=300');
     
                 if (!popup) {
                     alert("Popup blocked! Please allow popups for this site.");
                     return;
                 }
-
-                popup.document.write("<h1>I'm Bouncing!</h1>");
 
                 // 2. Start the animation loop
                 setTimeout(function(){setInterval(function(){
@@ -130,7 +128,11 @@
                     popup.moveBy(vx, vy);
                 }, 30)},1100);
             }
-            spawnAndBounce()
+            spawnAndBounce("lol3")
+            spawnAndBounce("lol2")
+            spawnAndBounce("lol4")
+            spawnAndBounce("lol1")
+            spawnAndBounce("popup")
         }
         document.addEventListener('click', function(){
             YouAreCooked();
