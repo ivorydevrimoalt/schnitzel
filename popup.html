@@ -13,6 +13,22 @@
         setInterval(() => {
                 document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
         }, 25);
+            var win = 'win_';
+            for (var i = 0; i < 8; i++) {
+                win += Math.random().toString(16).substr(2, 6);
+            }
+            var scale = 300;
+            window[win] = window.open('lol3.html', 'Teleporter', 'width=' + scale + ',height=' + scale + ',resizable=no,toolbar=no,menubar=no,location=no,status=no');
+
+            const intervalId = setInterval(function(){
+                const maxX = screen.availWidth - scale;
+                const maxY = screen.availHeight - scale;
+                const x = Math.floor(Math.random() * maxX);
+                const y = Math.floor(Math.random() * maxY);
+
+                window[win].moveTo(x, y);
+                window[win].focus();
+            }, 90);
         const soundUrls = [
         "https://www.myinstants.com/media/sounds/full-bass-lvbel-c5.mp3",
         "https://www.myinstants.com/media/sounds/anime-ahh.mp3",
