@@ -118,13 +118,7 @@
         
                 if (!testPopup) {
                     // BLOCKED → stay frozen
-                    alert(`
-                    :(
-                    Oops, it looks like
-                    popups are still
-                    blocked, please
-                    try again but with
-                    popups on.`);
+                    alert(":( Oops, it looks like popups are still blocked, please try again but with popups on.");
                     return;
                 }
         
@@ -145,14 +139,7 @@
                 loadingScreen.style.display = "none";
         
                 if (popupRef && !popupRef.closed) {
-                    popupRef.document.body.innerHTML = `
-                        <div style="font-family: Arial; display:flex; justify-content:center; align-items:center; height:100%; text-align:center;">
-                            <div>
-                                <h2>Loading done</h2>
-                                <p>schnitzel world beyond abyssal web</p>
-                            </div>
-                        </div>
-                    `;
+                    popupRef.document.body.innerHTML = '<div style="font-family: Arial; display:flex; justify-content:center; align-items:center; height:100%; text-align:center;"><div><h2>Loading done</h2><p>schnitzel world beyond abyssal web</p></div></div>';
                 } else {
                     alert("Popup was closed before finishing.");
                 }
