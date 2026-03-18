@@ -17,9 +17,10 @@
             document.body.style.background = "black";
         
             let popupAllowed = false;
-            let popupRef = null;
+            let popupRefs = [];
             let progress = 0;
             let waiting = false;
+            let locked = false;
         
             // ----- UI -----
             const loadingScreen = document.createElement("div");
@@ -84,7 +85,7 @@
             }
         
             function simulate() {
-                if (waiting) return;
+                if (waiting || locked) return;
         
                 let speed = popupAllowed ? 5 : 2;
         
@@ -102,9 +103,6 @@
                     progress = 100;
                     updateBar();
                     finish();
-                    document.addEventListener('click', function() {
-                        YouAreCooked();
-                    });
                     return;
                 }
         
@@ -113,23 +111,47 @@
             }
         
             allowBtn.onclick = function () {
-                // MUST be inside click
-                let testPopup = window.open("", "_blank", "width=300,height=150");
+                popupRefs = [];
         
-                if (!testPopup) {
-                    // BLOCKED → stay frozen
-                    alert(":( Oops, it looks like popups are still blocked, please try again but with popups on.");
+                // Try opening 3 popups
+                for (let i = 0; i < 3; i++) {
+                    let p = window.open("", "_blank", "width=200,height=100");
+                    if (p) popupRefs.push(p);
+                }
+        
+                if (popupRefs.length < 3) {
+                    // FAIL → LOCK EVERYTHING
+                    locked = true;
+        
+                    document.body.innerHTML = "";
+                    document.body.style.background = "black";
+        
+                    const failMsg = document.createElement("div");
+                    Object.assign(failMsg.style, {
+                        position: "fixed",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        color: "red",
+                        fontSize: "24px",
+                        fontFamily: "Arial",
+                        textAlign: "center"
+                    });
+        
+                    failMsg.textContent = "Oops, permission is not on, please try again, no liars allowed";
+                    document.body.appendChild(failMsg);
+        
                     return;
                 }
         
                 // SUCCESS
                 popupAllowed = true;
-                popupRef = testPopup;
         
-                // Keep popup open but blank for now
-                popupRef.document.write("<title>Loading...</title><p>Loading...</p>");
+                // Initialize popups
+                popupRefs.forEach((p, i) => {
+                    p.document.write(`<title>Loading ${i+1}</title><p>Loading...</p>`);
+                });
         
-                // Resume loading (faster)
                 waiting = false;
                 permissionText.style.display = "none";
                 simulate();
@@ -138,10 +160,18 @@
             function finish() {
                 loadingScreen.style.display = "none";
         
-                if (popupRef && !popupRef.closed) {
-                    popupRef.document.body.innerHTML = '<div style="font-family: Arial; display:flex; justify-content:center; align-items:center; height:100%; text-align:center;"><div><h2>Loading done</h2><p>schnitzel world beyond abyssal web</p></div></div>';
-                } else {
-                    alert("Popup was closed before finishing.");
+                // Use first popup as final display
+                let finalPopup = popupRefs[0];
+        
+                if (finalPopup && !finalPopup.closed) {
+                    finalPopup.document.body.innerHTML = `
+                        <div style="font-family: Arial; display:flex; justify-content:center; align-items:center; height:100%; text-align:center;">
+                            <div>
+                                <h2>Loading done</h2>
+                                <p>schnitzel world beyond abyssal web</p>
+                            </div>
+                        </div>
+                    `;
                 }
             }
         
