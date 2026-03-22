@@ -1,3 +1,9 @@
+# 0.2
+
+Prank only works in Edge
+
+# 0.1
+
 Prank only works in IE
 
 ```
